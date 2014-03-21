@@ -145,8 +145,16 @@
 		<rule-metadata name="%ForbidThrowAnonymousExceptionsCheck.name" internal-name="ForbidThrowAnonymousExceptionsCheck" parent="TreeWalker">
 			<alternative-name internal-name="com.github.sevntu.checkstyle.checks.coding.ForbidThrowAnonymousExceptionsCheck"/>
 			<description>%ForbidThrowAnonymousExceptionsCheck.desc</description>
+			
+		</rule-metadata>	
+		<rule-metadata name="%ForbidTokensAtLineEndCheck.name" internal-name="ForbidTokensAtLineEndCheck" parent="TreeWalker">
+			<alternative-name internal-name="com.github.sevntu.checkstyle.check.coding.ForbidTokensAtLineEndCheck"/>
+			<description>%ForbidTokensAtLineEndCheck.desc</description>
+			<property-metadata name="forbidTokensAtLineEndRegex" datatype="Regex" default-value="([.,|+*/\-=]|(&#38;&#38;|\|\||=\=))">
+				<description>%ForbidTokensAtLineEndCheck.forbidTokensAtLineEndRegex</description>
+			</property-metadata>
 		</rule-metadata>
-		
+
 	<rule-metadata name="%ReturnNullInsteadOfBoolean.name" internal-name="ReturnNullInsteadOfBoolean" parent="TreeWalker">
             <alternative-name internal-name="com.github.sevntu.checkstyle.checks.coding.ReturnNullInsteadOfBoolean"/>
             <description>%ReturnNullInsteadOfBoolean.desc</description>
@@ -230,11 +238,14 @@
             <message-key key="multiple.string.literal" />
         </rule-metadata>
 
-	    <rule-metadata name="%NestedTernaryCheck.name" internal-name="NestedTernary" parent="TreeWalker">
-	            <alternative-name internal-name="com.github.sevntu.checkstyle.checks.coding.NestedTernaryCheck"/>
-	            <description>%NestedTernaryCheck.desc</description>
-	            <property-metadata name="ignoreFinal" datatype="Boolean" default-value="false">
-                	<description>%NestedTernaryCheck.ignoreFinal</description>
+	    <rule-metadata name="%TernaryPerExpressionCountCheck.name" internal-name="TernaryPerExpressionCount" parent="TreeWalker">
+	            <alternative-name internal-name="com.github.sevntu.checkstyle.checks.coding.TernaryPerExpressionCountCheck"/>
+	            <description>%TernaryPerExpressionCountCheck.desc</description>
+	            <property-metadata name="maxTernaryPerExpressionCount" datatype="Integer" default-value="1">
+                	<description>%TernaryPerExpressionCountCheck.maxTernaryPerExpressionCount</description>
+           		 </property-metadata>
+           		 <property-metadata name="ternaryInBraces" datatype="Boolean" default-value="true">
+           		 	<description>%TernaryPerExpressionCountCheck.ternaryInBraces</description>
            		 </property-metadata>
 	    </rule-metadata>
 

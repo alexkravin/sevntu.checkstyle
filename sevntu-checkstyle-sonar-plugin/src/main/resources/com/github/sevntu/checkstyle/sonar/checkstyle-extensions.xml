@@ -356,7 +356,19 @@
 		<key>com.github.sevntu.checkstyle.checks.coding.ForbidThrowAnonymousExceptionsCheck</key>
 		<name>Forbid Throw Anonymous Exceptions</name>
 		<category name="coding"/>
-		<description><p>Forbid throwing anonymous exception.<br/>limitation: This Check does not validate cases then Exception object is created before it is thrown.<br/>For example:</p><code><pre>catch (Exception e) {<br/>   throw new RuntimeException() { //anonymous exception<br/>    //some code<br/>   };</code></pre>
+		<description><p>Forbid throwing anonymous exception.<br/>limitation: This Check does not validate cases then Exception object is created before it is thrown.<br/>For example:</p><code><pre>catch (Exception e) {<br/>   throw new RuntimeException() { //anonymous exception<br/>    //some code<br/>   };</pre></code></description></rule>
+	
+	<rule>
+		<key>com.github.sevntu.checkstyle.checks.coding.ForbidTokensAtLineEndCheck</key>
+		<name>Forbid Tokens At Line End</name>
+		<category name="coding" />
+		<description>Forbids specified tokens at line end</description>
+		<configKey>Checker/TreeWalker/com.github.sevntu.checkstyle.checks.coding.ForbidTokensAtLineEndCheck</configKey>
+		<param key="forbidTokensAtLineEndRegex" type="REGULAR_EXPRESSION">
+			<defaultValue>([.,|+*/\-=]|(&#38;&#38;|\|\||=\=))</defaultValue>
+			<description>Regular expression which matches the last token of the string</description>
+		</param>
+	</rule>
 	<rule>
 		<key>com.github.sevntu.checkstyle.checks.coding.IllegalCatchExtendedCheck</key>
 		<name>Illegal Catch Check Extended</name>
